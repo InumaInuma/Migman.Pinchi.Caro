@@ -1,21 +1,21 @@
 'use client';
 
 import React from 'react';
-import { UserCheck, GraduationCap, Briefcase, HeartHandshake, ShieldCheck, Linkedin, ExternalLink, Award, MapPin } from 'lucide-react';
+import { UserCheck, GraduationCap, Briefcase, Linkedin, ExternalLink, MapPin } from 'lucide-react';
 
 export default function SobreMi() {
   const educacion = [
     {
-      titulo: 'Máster en Sistemas Ferroviarios',
+      titulo: 'Maestría en Sistemas Ferroviarios (Magíster)',
       institucion: 'TECH Universidad',
       periodo: '2022 - 2023',
       destaque: 'Posgrado Especializado'
     },
     {
-      titulo: 'Bachiller en Administración de Empresas',
+      titulo: 'Lic. en Administración de Empresas (Licenciado)',
       institucion: 'Universidad Peruana de Ciencias Aplicadas (UPC)',
       periodo: '2018 - 2021',
-      destaque: 'Orden de Mérito Academic'
+      destaque: 'Grado Profesional & Orden de Mérito'
     },
     {
       titulo: 'Curso Storytelling y Presentaciones Efectivas',
@@ -27,7 +27,7 @@ export default function SobreMi() {
       titulo: 'Titulado en Administración Bancaria',
       institucion: 'IFB CERTUS',
       periodo: '2010 - 2013',
-      destaque: 'Título Profesional'
+      destaque: 'Título Técnico Profesional'
     }
   ];
 
@@ -43,7 +43,7 @@ export default function SobreMi() {
       periodo: '2021 - 2022'
     },
     {
-      cargo: 'Conductor de Tren UME',
+      cargo: 'Conductor de Tren UME Full Time',
       empresa: 'Línea 1 Metro de Lima',
       periodo: '2014 - 2020'
     },
@@ -91,8 +91,8 @@ export default function SobreMi() {
 
               <div className="space-y-3 text-center">
                 <h3 className="text-2xl font-black text-white">Migman Pinchi Caro</h3>
-                <p className="text-xs font-bold text-verde-400 uppercase tracking-widest">
-                  Bachiller en Administración • Experto en Gestión de Transporte
+                <p className="text-xs font-bold text-verde-400 uppercase tracking-wider">
+                  Lic. en Administración de Empresas • Magíster en Sistemas Ferroviarios
                 </p>
 
                 <div className="pt-2 flex justify-center">
@@ -130,11 +130,11 @@ export default function SobreMi() {
               </p>
               
               <p>
-                Desde muy joven me involucré en la representación social: fui <strong className="text-white">Alcalde Escolar</strong>, participé activamente en marchas por los derechos de la ciudadanía, y he promovido constantemente el deporte y el voluntariado vecinal.
+                Como <strong className="text-white">Lic. en Administración de Empresas</strong> y <strong className="text-white">Magíster en Sistemas Ferroviarios</strong>, he combinado mi vocación social con una sólida preparación técnica para el servicio público. Desde muy joven me involucré en la representación social: fui <strong className="text-white">Alcalde Escolar</strong>, participé en marchas ciudadanas por el respeto de nuestros derechos y promuevo activamente el deporte y el voluntariado vecinal.
               </p>
 
               <p className="bg-morado-900/40 p-4 rounded-xl border border-morado-700 text-white font-medium">
-                💪 Creo firmemente que es momento de que más jóvenes se involucren con energía e ideas transparentes para construir un Perú e integridad próspera. No puedo quedarme de brazos cruzados viendo las necesidades de nuestro distrito.
+                💪 Creo firmemente que es momento de que más jóvenes se involucren con energía e ideas transparentes para construir un Perú más próspero e íntegro. No puedo quedarme de brazos cruzados viendo las injusticias y necesidades de nuestro distrito.
               </p>
             </div>
 
@@ -176,8 +176,8 @@ export default function SobreMi() {
             <div className="flex items-center space-x-3 text-verde-400 border-b border-morado-800 pb-4">
               <Briefcase className="w-8 h-8" />
               <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-purple-300">TRAYECTORIA DE GESTIÓN</span>
-                <h3 className="text-xl font-black text-white">Experiencia Laboral (14+ Años)</h3>
+                <span className="text-xs font-bold uppercase tracking-widest text-purple-300">TRAYECTORIA DE GESTIÓN (14+ AÑOS)</span>
+                <h3 className="text-xl font-black text-white">Experiencia Laboral</h3>
               </div>
             </div>
 

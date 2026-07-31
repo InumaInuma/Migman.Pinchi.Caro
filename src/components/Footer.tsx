@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Calendar, Vote } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -10,10 +10,14 @@ export default function Footer() {
         
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-gray-800">
           
-          {/* Brand */}
+          {/* Brand with Official PNG Logo */}
           <div className="flex items-center space-x-3 text-center md:text-left">
-            <div className="w-12 h-12 bg-morado-700 text-white font-black text-2xl rounded-2xl flex items-center justify-center shadow-lg">
-              M
+            <div className="bg-white p-1.5 rounded-2xl shadow-md border border-white/20">
+              <img
+                src="/partidomorado.png"
+                alt="Partido Morado"
+                className="h-9 w-auto object-contain"
+              />
             </div>
             <div>
               <span className="block text-xs font-black text-verde-400 uppercase tracking-widest">

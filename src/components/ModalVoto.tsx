@@ -1,13 +1,12 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { CheckCircle, Calendar, Sparkles, X, Vote } from 'lucide-react';
+import { Calendar, Sparkles, X, Vote, Check } from 'lucide-react';
 
 export default function ModalVoto() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    // Show modal on load unless user dismissed it in current session
     const dismissed = sessionStorage.getItem('voto_modal_dismissed');
     if (!dismissed) {
       setIsOpen(true);
@@ -22,7 +21,7 @@ export default function ModalVoto() {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn">
       <div className="relative w-full max-w-lg bg-gradient-to-b from-morado-900 via-morado-950 to-black rounded-3xl border-2 border-verde-500/60 shadow-[0_0_50px_rgba(34,197,94,0.3)] overflow-hidden">
         
         {/* Top Header Badge */}
@@ -51,40 +50,47 @@ export default function ModalVoto() {
             ESTE <span className="text-verde-400 underline decoration-verde-500 decoration-4">DOMINGO 4 DE OCTUBRE</span>
           </h2>
 
-          {/* Interactive Ballot Card Visual */}
-          <div className="bg-morado-950/90 border-2 border-dashed border-verde-400/80 rounded-2xl p-5 relative shadow-inner">
-            <div className="text-xs text-purple-300 font-semibold mb-2 uppercase tracking-wide">
-              Cédula de Votación Municipal
+          <p className="text-sm font-extrabold text-purple-200 uppercase tracking-wide">
+            ¡MARCA EL SÍMBOLO DEL <span className="text-verde-400">PARTIDO MORADO</span>!
+          </p>
+
+          {/* Interactive Ballot Card Visual with Official PNG Logo */}
+          <div className="bg-morado-950/90 border-2 border-dashed border-verde-400/80 rounded-2xl p-5 relative shadow-inner space-y-3">
+            <div className="text-xs text-purple-300 font-bold uppercase tracking-wider flex justify-between">
+              <span>CÉDULA ELECTORAL</span>
+              <span className="text-verde-400 font-black">MARCA 2 VECES (DISTRITAL Y PROVINCIAL)</span>
             </div>
             
             <div className="flex items-center justify-between bg-white text-gray-900 rounded-xl p-4 shadow-lg border border-purple-200">
+              {/* Logo Official PNG */}
               <div className="flex items-center space-x-3 text-left">
-                {/* Logo Marca / Partido */}
-                <div className="w-12 h-12 bg-morado-700 rounded-lg flex items-center justify-center font-black text-white text-2xl shadow">
-                  M
+                <div className="w-16 h-16 bg-white border-2 border-morado-700 rounded-xl p-1 flex items-center justify-center shadow">
+                  <img
+                    src="/partidomorado.png"
+                    alt="Partido Morado Símbolo"
+                    className="h-12 w-auto object-contain"
+                  />
                 </div>
                 <div>
-                  <span className="block text-xs font-extrabold text-morado-800 uppercase tracking-wider">
+                  <span className="block text-xs font-black text-morado-900 uppercase tracking-wider">
                     PARTIDO MORADO
                   </span>
-                  <span className="block text-sm font-bold text-gray-700">
-                    VILLA EL SALVADOR
+                  <span className="block text-xs font-bold text-gray-700">
+                    VILLA EL SALVADOR & LIMA
                   </span>
                 </div>
               </div>
 
-              {/* The "3" Voting Box */}
+              {/* Marked Box */}
               <div className="relative bg-amber-100 border-4 border-morado-700 w-16 h-16 rounded-xl flex items-center justify-center shadow-md">
-                <span className="text-3xl font-black text-morado-900">3</span>
-                {/* Checkmark overlay */}
-                <div className="absolute inset-0 flex items-center justify-center bg-verde-600/90 rounded-lg text-white font-extrabold text-2xl animate-pulse">
-                  ✓ 3
+                <div className="absolute inset-0 flex items-center justify-center bg-verde-600/90 rounded-lg text-white font-black text-3xl animate-pulse">
+                  ✓
                 </div>
               </div>
             </div>
 
-            <p className="mt-3 text-xs sm:text-sm text-purple-200 font-medium">
-              ¡Busca el símbolo del <strong className="text-white font-bold">Partido Morado</strong> y <strong className="text-verde-400 font-bold">MARCA EL 3</strong>!
+            <p className="text-xs sm:text-sm text-purple-200 font-semibold">
+              En las dos cédulas (Distrital para VES y Provincial para Lima), <strong className="text-verde-400 font-extrabold">MARCA EL SÍMBOLO DEL PARTIDO MORADO</strong>.
             </p>
           </div>
 

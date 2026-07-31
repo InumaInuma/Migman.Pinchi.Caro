@@ -1,13 +1,15 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Vote, CheckCircle2, Sparkles, RefreshCw } from 'lucide-react';
+import { CheckCircle2, Sparkles, RefreshCw } from 'lucide-react';
 
 export default function SimuladorVoto() {
-  const [hasVoted, setHasVoted] = useState(false);
+  const [votedDistrital, setVotedDistrital] = useState(false);
+  const [votedProvincial, setVotedProvincial] = useState(false);
 
-  const handleVote = () => {
-    setHasVoted(true);
+  const resetVotes = () => {
+    setVotedDistrital(false);
+    setVotedProvincial(false);
   };
 
   return (
@@ -23,90 +25,122 @@ export default function SimuladorVoto() {
           ¿CÓMO VOTAR ESTE <span className="text-verde-400">DOMINGO 4 DE OCTUBRE</span>?
         </h2>
 
-        <p className="text-gray-300 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
-          Prueba nuestro simulador digital. En la cédula oficial de votación, ubica el logo del <strong className="text-white">Partido Morado</strong> y marca con una cruz o escribe el número <strong className="text-verde-400">3</strong>.
+        <p className="text-gray-300 text-base sm:text-lg mb-8 max-w-2xl mx-auto">
+          En las elecciones municipales debes <strong className="text-verde-400 font-black uppercase">MARCAR 2 VECES EL SÍMBOLO DEL PARTIDO MORADO</strong>: una vez en la Cédula Distrital (Villa El Salvador) y una vez en la Cédula Provincial (Lima).
         </p>
 
-        {/* Digital Ballot Container */}
-        <div className="bg-gradient-to-b from-morado-900 via-morado-950 to-black p-6 sm:p-10 rounded-3xl border-4 border-morado-600 shadow-[0_0_50px_rgba(109,40,217,0.4)] max-w-lg mx-auto space-y-6">
+        {/* 2 Interactive Ballots (Distrital & Provincial) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-8">
           
-          <div className="bg-morado-950/80 px-4 py-2 rounded-xl border border-morado-700 text-xs font-bold text-purple-300 uppercase tracking-wider flex items-center justify-between">
-            <span>CÉDULA ELECTORAL MUNICIPAL 2026</span>
-            <span>VILLA EL SALVADOR</span>
-          </div>
+          {/* Card 1: Distrital Villa El Salvador */}
+          <div className="bg-gradient-to-b from-morado-900 via-morado-950 to-black p-6 rounded-3xl border-2 border-morado-600 shadow-xl space-y-4">
+            <div className="bg-morado-950/80 px-3 py-1.5 rounded-xl border border-morado-700 text-xs font-black text-verde-400 uppercase tracking-wider">
+              1. CÉDULA DISTRITAL (VILLA EL SALVADOR)
+            </div>
 
-          {/* Interactive Ballot Card */}
-          <div className="bg-white rounded-2xl p-6 text-gray-900 shadow-2xl border-4 border-gray-200 space-y-4">
-            
-            <div className="flex items-center justify-between">
-              
-              {/* Party Logo & Info */}
-              <div className="flex items-center space-x-4 text-left">
-                <div className="w-16 h-16 bg-morado-700 text-white font-black text-3xl rounded-xl flex items-center justify-center shadow-lg border-2 border-morado-900">
-                  M
+            <div className="bg-white rounded-2xl p-5 text-gray-900 shadow-2xl border-4 border-gray-200 flex items-center justify-between">
+              <div className="flex items-center space-x-3 text-left">
+                <div className="w-16 h-16 bg-white border-2 border-morado-700 rounded-xl p-1 flex items-center justify-center shadow">
+                  <img
+                    src="/partidomorado.png"
+                    alt="Partido Morado Símbolo"
+                    className="h-12 w-auto object-contain"
+                  />
                 </div>
                 <div>
-                  <h4 className="text-base sm:text-lg font-black text-morado-950 tracking-wider">
-                    PARTIDO MORADO
-                  </h4>
-                  <p className="text-xs font-bold text-gray-600 uppercase">
-                    ALCALDÍA VILLA EL SALVADOR
-                  </p>
+                  <h4 className="text-sm font-black text-morado-950">PARTIDO MORADO</h4>
+                  <p className="text-[11px] font-bold text-gray-600">ALCALDÍA DISTRITAL VES</p>
                 </div>
               </div>
 
-              {/* Voting Target Box */}
               <button
-                onClick={handleVote}
-                className={`relative w-20 h-20 rounded-2xl border-4 transition-all duration-300 flex items-center justify-center cursor-pointer ${
-                  hasVoted
-                    ? 'bg-verde-500 border-verde-600 shadow-[0_0_20px_rgba(34,197,94,0.6)] scale-105'
+                onClick={() => setVotedDistrital(!votedDistrital)}
+                className={`relative w-16 h-16 rounded-2xl border-4 transition-all flex items-center justify-center cursor-pointer ${
+                  votedDistrital
+                    ? 'bg-verde-500 border-verde-600 scale-105 shadow-[0_0_20px_rgba(34,197,94,0.6)]'
                     : 'bg-amber-50 border-morado-700 hover:bg-amber-100 hover:scale-105'
                 }`}
-                aria-label="Marcar el 3"
+                aria-label="Marcar Distrital"
               >
-                {hasVoted ? (
-                  <div className="text-morado-950 text-center animate-bounce">
-                    <span className="text-3xl font-black block leading-none">✓</span>
-                    <span className="text-xs font-black uppercase">¡3!</span>
-                  </div>
+                {votedDistrital ? (
+                  <span className="text-morado-950 font-black text-3xl animate-bounce">✓</span>
                 ) : (
-                  <div className="text-center text-morado-900">
-                    <span className="text-4xl font-black block leading-none">3</span>
-                    <span className="text-[10px] font-extrabold tracking-wider block text-morado-700">MARCA</span>
-                  </div>
+                  <span className="text-xs font-black text-morado-900 uppercase">MARCA</span>
                 )}
               </button>
-
             </div>
-
+            <p className="text-xs text-purple-200">
+              {votedDistrital ? '✅ ¡Cédula Distrital Marcada!' : '👈 Toca la casilla para simular tu voto distrital'}
+            </p>
           </div>
 
-          {/* Feedback Message */}
-          {hasVoted ? (
-            <div className="bg-verde-500/20 border border-verde-500/50 p-4 rounded-2xl text-verde-300 space-y-2 animate-fadeIn">
-              <div className="flex items-center justify-center space-x-2 font-black text-lg text-white">
-                <CheckCircle2 className="w-6 h-6 text-verde-400" />
-                <span>¡EXCELENTE! HAS MARCADO EL 3 POR VILLA EL SALVADOR</span>
+          {/* Card 2: Provincial Lima */}
+          <div className="bg-gradient-to-b from-morado-900 via-morado-950 to-black p-6 rounded-3xl border-2 border-morado-600 shadow-xl space-y-4">
+            <div className="bg-morado-950/80 px-3 py-1.5 rounded-xl border border-morado-700 text-xs font-black text-verde-400 uppercase tracking-wider">
+              2. CÉDULA PROVINCIAL (LIMA METROPOLITANA)
+            </div>
+
+            <div className="bg-white rounded-2xl p-5 text-gray-900 shadow-2xl border-4 border-gray-200 flex items-center justify-between">
+              <div className="flex items-center space-x-3 text-left">
+                <div className="w-16 h-16 bg-white border-2 border-morado-700 rounded-xl p-1 flex items-center justify-center shadow">
+                  <img
+                    src="/partidomorado.png"
+                    alt="Partido Morado Símbolo"
+                    className="h-12 w-auto object-contain"
+                  />
+                </div>
+                <div>
+                  <h4 className="text-sm font-black text-morado-950">PARTIDO MORADO</h4>
+                  <p className="text-[11px] font-bold text-gray-600">ALCALDÍA PROVINCIAL LIMA</p>
+                </div>
               </div>
-              <p className="text-xs text-gray-200">
-                Recuerda asistir a votar este <strong>Domingo 4 de Octubre de 2026</strong>.
-              </p>
+
               <button
-                onClick={() => setHasVoted(false)}
-                className="inline-flex items-center space-x-1 text-xs font-extrabold text-verde-400 underline hover:text-white pt-2"
+                onClick={() => setVotedProvincial(!votedProvincial)}
+                className={`relative w-16 h-16 rounded-2xl border-4 transition-all flex items-center justify-center cursor-pointer ${
+                  votedProvincial
+                    ? 'bg-verde-500 border-verde-600 scale-105 shadow-[0_0_20px_rgba(34,197,94,0.6)]'
+                    : 'bg-amber-50 border-morado-700 hover:bg-amber-100 hover:scale-105'
+                }`}
+                aria-label="Marcar Provincial"
               >
-                <RefreshCw className="w-3.5 h-3.5" />
-                <span>Simular de nuevo</span>
+                {votedProvincial ? (
+                  <span className="text-morado-950 font-black text-3xl animate-bounce">✓</span>
+                ) : (
+                  <span className="text-xs font-black text-morado-900 uppercase">MARCA</span>
+                )}
               </button>
             </div>
-          ) : (
-            <p className="text-xs sm:text-sm text-purple-200 italic">
-              👆 Haz clic en el recuadro amarillo de arriba para simular tu voto.
+            <p className="text-xs text-purple-200">
+              {votedProvincial ? '✅ ¡Cédula Provincial Marcada!' : '👈 Toca la casilla para simular tu voto provincial'}
             </p>
-          )}
+          </div>
 
         </div>
+
+        {/* Feedback Message */}
+        {votedDistrital && votedProvincial ? (
+          <div className="bg-verde-500/20 border border-verde-500/50 p-5 rounded-2xl text-verde-300 space-y-2 animate-fadeIn max-w-xl mx-auto">
+            <div className="flex items-center justify-center space-x-2 font-black text-lg text-white">
+              <CheckCircle2 className="w-6 h-6 text-verde-400" />
+              <span>¡EXCELENTE! HAS MARCADO 2 VECES EL SÍMBOLO MORADO</span>
+            </div>
+            <p className="text-xs text-gray-200">
+              Recuerda asistir a votar este <strong>Domingo 4 de Octubre de 2026</strong>.
+            </p>
+            <button
+              onClick={resetVotes}
+              className="inline-flex items-center space-x-1 text-xs font-extrabold text-verde-400 underline hover:text-white pt-2"
+            >
+              <RefreshCw className="w-3.5 h-3.5" />
+              <span>Simular de nuevo</span>
+            </button>
+          </div>
+        ) : (
+          <p className="text-xs sm:text-sm text-purple-200 italic">
+            👆 Toca las casillas en ambas cédulas para completar la simulación de voto doble (Distrital y Provincial).
+          </p>
+        )}
 
       </div>
 

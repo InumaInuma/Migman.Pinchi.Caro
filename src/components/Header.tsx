@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Menu, X, MessageCircle, Phone, Share2 } from 'lucide-react';
+import { Menu, X, MessageCircle } from 'lucide-react';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -17,20 +17,24 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 bg-morado-dark/85 backdrop-blur-lg border-b border-morado-700/40 shadow-xl">
+    <header className="fixed top-0 left-0 right-0 z-40 bg-morado-dark/90 backdrop-blur-lg border-b border-morado-700/40 shadow-xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
-          {/* Logo & Brand */}
+          {/* Logo & Brand with Official Partido Morado PNG */}
           <a href="#inicio" className="flex items-center space-x-3 group">
-            <div className="w-11 h-11 bg-gradient-to-tr from-morado-700 to-verde-500 rounded-2xl flex items-center justify-center text-white font-black text-2xl shadow-lg border border-white/20 group-hover:scale-105 transition-transform">
-              M
+            <div className="bg-white p-1.5 rounded-2xl shadow-lg border border-white/20 group-hover:scale-105 transition-transform">
+              <img
+                src="/partidomorado.png"
+                alt="Partido Morado"
+                className="h-9 sm:h-10 w-auto object-contain"
+              />
             </div>
             <div>
               <span className="block text-xs font-black tracking-widest text-verde-400 uppercase">
                 PARTIDO MORADO
               </span>
-              <span className="block text-lg font-extrabold text-white tracking-tight leading-none">
+              <span className="block text-base sm:text-lg font-extrabold text-white tracking-tight leading-none">
                 VILLA EL SALVADOR
               </span>
             </div>
@@ -49,7 +53,7 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Action Button: WhatsApp CTA (Desktop & Tablet) */}
+          {/* Action Button: WhatsApp CTA */}
           <div className="hidden sm:flex items-center space-x-3">
             <a
               href="https://wa.me/51999999999?text=Hola,%20deseo%20apoyar%20la%20campa%C3%B1a%20para%20Villa%20El%20Salvador%202026"

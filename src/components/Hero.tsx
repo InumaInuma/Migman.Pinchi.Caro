@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 import { ShieldCheck, Users, Eye, ArrowRight, Calendar, Vote, Sparkles } from 'lucide-react';
 
 export default function Hero() {
-  // Target election date: October 4, 2026
   const targetDate = new Date('2026-10-04T08:00:00-05:00').getTime();
 
   const [timeLeft, setTimeLeft] = useState({
@@ -45,10 +44,10 @@ export default function Hero() {
         
         {/* Election Date Top Highlight Tag */}
         <div className="flex justify-center mb-6">
-          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-morado-800/80 via-morado-700/80 to-morado-800/80 border border-verde-400/50 px-4 py-2 rounded-full shadow-lg backdrop-blur-md">
+          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-morado-800/90 via-morado-700/90 to-morado-800/90 border border-verde-400/50 px-4 py-2 rounded-full shadow-lg backdrop-blur-md">
             <Calendar className="w-5 h-5 text-verde-400 animate-pulse" />
             <span className="text-xs sm:text-sm font-extrabold text-white tracking-wider uppercase">
-              DOMINGO 4 DE OCTUBRE DE 2026 • ELECCIONES MUNICIPALES
+              DOMINGO 4 DE OCTUBRE DE 2026 • MARCA EL SÍMBOLO DEL PARTIDO MORADO
             </span>
           </div>
         </div>
@@ -160,20 +159,23 @@ export default function Hero() {
               <div className="relative rounded-3xl overflow-hidden border-4 border-morado-600 shadow-[0_0_50px_rgba(109,40,217,0.5)] bg-gradient-to-b from-morado-800 to-morado-950">
                 <img
                   src="/imagenCandidato.jpeg"
-                  alt="Candidato Alcaldía Villa El Salvador"
+                  alt="Migman Pinchi Caro - Candidato a la Alcaldía Villa El Salvador"
                   className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500"
                 />
 
                 {/* Bottom Overlay Card */}
-                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-morado-950 via-morado-950/90 to-transparent p-6 text-center space-y-1">
+                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-morado-950 via-morado-950/95 to-transparent p-6 text-center space-y-1.5">
                   <div className="inline-block bg-verde-500 text-morado-950 font-black text-xs px-3 py-1 rounded-full uppercase tracking-wider">
-                    CANDIDATO A LA ALCALDÍA
+                    MIGMAN PINCHI CARO
                   </div>
                   <h3 className="text-xl sm:text-2xl font-black text-white">
-                    PARTIDO MORADO
+                    CANDIDATO A LA ALCALDÍA
                   </h3>
-                  <p className="text-xs font-semibold text-verde-400 uppercase tracking-widest">
-                    ESTE DOMINGO 4 DE OCTUBRE: MARCA EL 3
+                  <p className="text-xs font-bold text-gray-200">
+                    Lic. en Administración de Empresas • Magíster en Sistemas Ferroviarios
+                  </p>
+                  <p className="text-xs font-extrabold text-verde-400 uppercase tracking-widest pt-1">
+                    MARCA 2 VECES EL SÍMBOLO DEL PARTIDO MORADO
                   </p>
                 </div>
               </div>
