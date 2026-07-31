@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Calendar, Sparkles, X, Vote, Check } from 'lucide-react';
+import { Calendar, Sparkles, X, Vote } from 'lucide-react';
 
 export default function ModalVoto() {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,50 +47,60 @@ export default function ModalVoto() {
           </div>
 
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
-            ESTE <span className="text-verde-400 underline decoration-verde-500 decoration-4">DOMINGO 4 DE OCTUBRE</span>
+            ESTE <span className="text-verde-400 underline decoration-verde-500 decoration-4">DOMINGO 04 DE OCTUBRE</span>
           </h2>
 
           <p className="text-sm font-extrabold text-purple-200 uppercase tracking-wide">
-            ¡MARCA EL SÍMBOLO DEL <span className="text-verde-400">PARTIDO MORADO</span>!
+            MARCA CON UNA <span className="text-verde-400 text-lg font-black bg-morado-800 px-2 py-0.5 rounded">X</span> EL SÍMBOLO DEL PARTIDO MORADO
           </p>
 
-          {/* Interactive Ballot Card Visual with Official PNG Logo */}
+          {/* Interactive Ballot Card Visual matching Image 2 */}
           <div className="bg-morado-950/90 border-2 border-dashed border-verde-400/80 rounded-2xl p-5 relative shadow-inner space-y-3">
             <div className="text-xs text-purple-300 font-bold uppercase tracking-wider flex justify-between">
               <span>CÉDULA ELECTORAL</span>
-              <span className="text-verde-400 font-black">MARCA 2 VECES (DISTRITAL Y PROVINCIAL)</span>
+              <span className="text-verde-400 font-black">PROVINCIAL Y DISTRITAL</span>
             </div>
             
-            <div className="flex items-center justify-between bg-white text-gray-900 rounded-xl p-4 shadow-lg border border-purple-200">
-              {/* Logo Official PNG */}
-              <div className="flex items-center space-x-3 text-left">
-                <div className="w-16 h-16 bg-white border-2 border-morado-700 rounded-xl p-1 flex items-center justify-center shadow">
+            <div className="grid grid-cols-2 gap-4">
+              
+              {/* Box 1: Provincial */}
+              <div className="bg-white rounded-xl p-3 border-2 border-morado-700 flex flex-col items-center space-y-2">
+                <span className="text-[10px] font-black text-morado-900 uppercase">PROVINCIAL</span>
+                <div className="relative w-20 h-20 bg-white border-2 border-morado-800 rounded-xl p-1 flex items-center justify-center">
                   <img
                     src="/partidomorado.png"
                     alt="Partido Morado Símbolo"
-                    className="h-12 w-auto object-contain"
+                    className="w-full h-full object-contain"
                   />
-                </div>
-                <div>
-                  <span className="block text-xs font-black text-morado-900 uppercase tracking-wider">
-                    PARTIDO MORADO
-                  </span>
-                  <span className="block text-xs font-bold text-gray-700">
-                    VILLA EL SALVADOR & LIMA
-                  </span>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-morado-950 font-black text-5xl leading-none select-none opacity-90">
+                      ✕
+                    </span>
+                  </div>
                 </div>
               </div>
 
-              {/* Marked Box */}
-              <div className="relative bg-amber-100 border-4 border-morado-700 w-16 h-16 rounded-xl flex items-center justify-center shadow-md">
-                <div className="absolute inset-0 flex items-center justify-center bg-verde-600/90 rounded-lg text-white font-black text-3xl animate-pulse">
-                  ✓
+              {/* Box 2: Distrital */}
+              <div className="bg-white rounded-xl p-3 border-2 border-morado-700 flex flex-col items-center space-y-2">
+                <span className="text-[10px] font-black text-morado-900 uppercase">DISTRITAL</span>
+                <div className="relative w-20 h-20 bg-white border-2 border-morado-800 rounded-xl p-1 flex items-center justify-center">
+                  <img
+                    src="/partidomorado.png"
+                    alt="Partido Morado Símbolo"
+                    className="w-full h-full object-contain"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-morado-950 font-black text-5xl leading-none select-none opacity-90">
+                      ✕
+                    </span>
+                  </div>
                 </div>
               </div>
+
             </div>
 
-            <p className="text-xs sm:text-sm text-purple-200 font-semibold">
-              En las dos cédulas (Distrital para VES y Provincial para Lima), <strong className="text-verde-400 font-extrabold">MARCA EL SÍMBOLO DEL PARTIDO MORADO</strong>.
+            <p className="text-xs text-purple-200 font-semibold pt-1">
+              En las dos cédulas (Distrital para VES y Provincial para Lima), <strong className="text-verde-400 font-extrabold">MARCA LA X SOBRE EL SÍMBOLO MORADO</strong>.
             </p>
           </div>
 

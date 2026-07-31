@@ -56,7 +56,7 @@ export default function Header() {
           {/* Action Button: WhatsApp CTA */}
           <div className="hidden sm:flex items-center space-x-3">
             <a
-              href="https://wa.me/51999999999?text=Hola,%20deseo%20apoyar%20la%20campa%C3%B1a%20para%20Villa%20El%20Salvador%202026"
+              href="https://wa.me/51941378075?text=Hola,%20deseo%20apoyar%20la%20campa%C3%B1a%20para%20Villa%20El%20Salvador%202026"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-2 bg-gradient-to-r from-verde-500 to-verde-600 hover:from-verde-600 hover:to-verde-700 text-morado-950 px-4 py-2.5 rounded-full font-black text-xs uppercase tracking-wider shadow-[0_0_15px_rgba(34,197,94,0.4)] transition-all hover:scale-105"
@@ -69,7 +69,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <div className="flex lg:hidden items-center space-x-2">
             <a
-              href="https://wa.me/51999999999?text=Hola,%20deseo%20apoyar%20la%20campa%C3%B1a%20para%20Villa%20El%20Salvador%202026"
+              href="https://wa.me/51941378075?text=Hola,%20deseo%20apoyar%20la%20campa%C3%B1a%20para%20Villa%20El%20Salvador%202026"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 bg-verde-500 text-morado-950 rounded-full font-bold shadow-md"

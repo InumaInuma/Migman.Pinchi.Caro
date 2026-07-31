@@ -12,7 +12,7 @@ export default function Voluntariado() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const text = `Hola, mi nombre es ${nombre}. Vivo en ${sector} de Villa El Salvador. Deseo sumarme al equipo de campaña. Mensaje: ${mensaje || '¡Cuenten con mi apoyo para este 4 de Octubre!'}`;
-    const whatsappUrl = `https://wa.me/51999999999?text=${encodeURIComponent(text)}`;
+    const whatsappUrl = `https://wa.me/51941378075?text=${encodeURIComponent(text)}`;
     window.open(whatsappUrl, '_blank');
   };
 
