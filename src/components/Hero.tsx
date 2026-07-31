@@ -51,13 +51,20 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Main Banner Artwork Image (paginaprincipal.png) */}
+        {/* Main Banner Artwork Image (paginaprincipal.png) with Overlaid "SE RESPETA" */}
         <div className="relative rounded-3xl overflow-hidden border-4 border-morado-600/70 shadow-[0_0_50px_rgba(109,40,217,0.5)] group">
           <img
             src="/paginaprincipal.png"
-            alt="Recuperemos Villa El Salvador - Con Orden, Seguridad y Transparencia"
+            alt="Recuperemos Villa Se Respeta - Con Orden, Seguridad y Transparencia"
             className="w-full h-auto object-cover transform hover:scale-[1.01] transition-transform duration-500"
           />
+
+          {/* Overlaid "SE RESPETA" Text right next to VILLA */}
+          <div className="absolute top-[32%] left-[28%] sm:top-[33%] sm:left-[30%] md:top-[34%] md:left-[31%] z-20 pointer-events-none">
+            <span className="inline-block font-black text-white text-[10px] xs:text-xs sm:text-2xl md:text-4xl lg:text-5xl uppercase tracking-tighter bg-gradient-to-r from-morado-900 via-morado-950 to-morado-900 text-white px-2 py-0.5 sm:px-4 sm:py-1 rounded-lg sm:rounded-2xl border-2 border-verde-400 shadow-[0_0_20px_rgba(34,197,94,0.8)] transform -rotate-1 animate-pulse">
+              SE RESPETA
+            </span>
+          </div>
 
           {/* Floating Subtle Gradient Shadow on edges */}
           <div className="absolute inset-0 ring-1 ring-white/10 pointer-events-none rounded-3xl" />
