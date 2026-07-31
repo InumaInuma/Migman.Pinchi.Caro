@@ -1,33 +1,39 @@
 'use client';
 
-import React from 'react';
-import { UserCheck, GraduationCap, Briefcase, Linkedin, ExternalLink, MapPin } from 'lucide-react';
+import React, { useState } from 'react';
+import { UserCheck, GraduationCap, Briefcase, Linkedin, ExternalLink, MapPin, Quote, Sparkles, Train, ShieldCheck, HeartHandshake, Award, ChevronRight } from 'lucide-react';
 
 export default function SobreMi() {
+  const [activeTab, setActiveTab] = useState<'historia' | 'educacion' | 'experiencia'>('historia');
+
   const educacion = [
     {
       titulo: 'Maestría en Sistemas Ferroviarios (Magíster)',
       institucion: 'TECH Universidad',
       periodo: '2022 - 2023',
-      destaque: 'Posgrado Especializado'
+      destaque: 'Posgrado Especializado de Alto Nivel',
+      icono: Train
     },
     {
       titulo: 'Lic. en Administración de Empresas (Licenciado)',
       institucion: 'Universidad Peruana de Ciencias Aplicadas (UPC)',
       periodo: '2018 - 2021',
-      destaque: 'Grado Profesional & Orden de Mérito'
+      destaque: 'Grado Profesional & Orden de Mérito',
+      icono: GraduationCap
     },
     {
-      titulo: 'Curso Storytelling y Presentaciones Efectivas',
-      institucion: 'UPC EPG',
+      titulo: 'Storytelling y Presentaciones Efectivas',
+      institucion: 'UPC Escuela de Postgrado (EPG)',
       periodo: '2022',
-      destaque: 'Especialización Ejecutiva'
+      destaque: 'Especialización Ejecutiva',
+      icono: Award
     },
     {
       titulo: 'Titulado en Administración Bancaria',
       institucion: 'IFB CERTUS',
       periodo: '2010 - 2013',
-      destaque: 'Título Técnico Profesional'
+      destaque: 'Título Técnico Profesional',
+      icono: Briefcase
     }
   ];
 
@@ -35,166 +41,265 @@ export default function SobreMi() {
     {
       cargo: 'Instructor de Capacitación Técnica',
       empresa: 'Línea 1 Metro de Lima (UNNA Infraestructura)',
-      periodo: '2022 - Actualidad'
+      periodo: '2022 - Actualidad',
+      descripcion: 'Formación y capacitación del personal operativo y técnico ferroviario.'
     },
     {
       cargo: 'Inspector de Transporte Ferroviario',
       empresa: 'Línea 1 Metro de Lima',
-      periodo: '2021 - 2022'
+      periodo: '2021 - 2022',
+      descripcion: 'Supervisión y control de estándares de seguridad operacional en estaciones.'
     },
     {
-      cargo: 'Conductor de Tren UME Full Time',
+      cargo: 'Conductor de Tren UME (Full Time)',
       empresa: 'Línea 1 Metro de Lima',
-      periodo: '2014 - 2020'
+      periodo: '2014 - 2020',
+      descripcion: 'Operación directa de unidades eléctricas trasladando a miles de pasajeros diariamente.'
     },
     {
       cargo: 'Administrador Junior de Estación & Cajero',
       empresa: 'Línea 1 Metro de Lima',
-      periodo: '2012 - 2014'
+      periodo: '2012 - 2014',
+      descripcion: 'Atención al usuario, gestión de recaudación y liderazgo de equipos de estación.'
     }
   ];
 
   return (
-    <section id="sobre-mi" className="py-20 bg-morado-950 relative border-t border-morado-800">
+    <section id="sobre-mi" className="py-20 bg-gradient-to-b from-morado-950 via-morado-dark to-morado-950 relative border-t border-morado-800">
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* Background Decorative Lighting */}
+      <div className="absolute top-1/3 left-0 w-96 h-96 bg-morado-600/15 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-10 right-0 w-96 h-96 bg-verde-500/10 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center space-x-2 bg-verde-500/20 text-verde-400 font-extrabold text-xs px-4 py-1.5 rounded-full uppercase tracking-wider border border-verde-500/30">
+        <div className="text-center max-w-3xl mx-auto space-y-4">
+          <div className="inline-flex items-center space-x-2 bg-verde-500/20 text-verde-400 font-extrabold text-xs px-4 py-1.5 rounded-full uppercase tracking-widest border border-verde-500/40 shadow-sm">
             <UserCheck className="w-4 h-4" /> CONOCE A TU PRÓXIMO ALCALDE
           </div>
           <h2 className="text-3xl sm:text-5xl font-black text-white uppercase tracking-tight">
-            SOBRE <span className="text-verde-400">MIGMAN PINCHI CARO</span>
+            SOBRE <span className="text-verde-400 drop-shadow-[0_0_15px_rgba(34,197,94,0.3)]">MIGMAN PINCHI CARO</span>
           </h2>
           <p className="text-gray-300 text-base sm:text-lg">
-            Un vecino trabajador, profesional capacitado y preparado para liderar la transformación de Villa El Salvador.
+            Integridad, esfuerzo y 14+ años de gestión eficiente para construir un Villa El Salvador con futuro.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
+        {/* Hero Card Profile + Top Quote Banner */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
-          {/* Candidate Image & Highlights Card */}
-          <div className="lg:col-span-5 flex flex-col items-center">
-            <div className="relative w-full max-w-md bg-gradient-to-b from-morado-900 to-black p-6 rounded-3xl border-2 border-verde-500/40 shadow-2xl space-y-6">
+          {/* Left: Photo & Social Card */}
+          <div className="lg:col-span-5 flex flex-col">
+            <div className="bg-gradient-to-b from-morado-900 via-morado-950 to-black p-6 rounded-3xl border-2 border-verde-500/40 shadow-2xl space-y-6 h-full flex flex-col justify-between">
               
-              <div className="relative rounded-2xl overflow-hidden border-2 border-morado-600 shadow-lg">
-                <img
-                  src="/imagenCandidato.jpeg"
-                  alt="Migman Pinchi Caro - Candidato VES 2026"
-                  className="w-full h-auto object-cover"
-                />
-                <div className="absolute top-3 left-3 bg-morado-900/90 text-verde-400 text-xs font-black px-3 py-1.5 rounded-full border border-verde-400/50 flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5" /> Villa El Salvador
+              <div className="space-y-4">
+                <div className="relative rounded-2xl overflow-hidden border-2 border-morado-600 shadow-xl group">
+                  <img
+                    src="/imagenCandidato.jpeg"
+                    alt="Migman Pinchi Caro"
+                    className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-3 left-3 bg-morado-900/90 text-verde-400 text-xs font-black px-3 py-1.5 rounded-full border border-verde-400/50 flex items-center gap-1.5 shadow">
+                    <MapPin className="w-3.5 h-3.5" /> Villa El Salvador
+                  </div>
+                </div>
+
+                <div className="text-center space-y-1">
+                  <h3 className="text-2xl font-black text-white">Migman Pinchi Caro</h3>
+                  <div className="inline-block bg-verde-500/20 text-verde-300 font-extrabold text-xs px-3 py-1 rounded-full border border-verde-500/30 uppercase tracking-wider">
+                    Lic. en Administración • Magíster en Sistemas Ferroviarios
+                  </div>
                 </div>
               </div>
 
-              <div className="space-y-3 text-center">
-                <h3 className="text-2xl font-black text-white">Migman Pinchi Caro</h3>
-                <p className="text-xs font-bold text-verde-400 uppercase tracking-wider">
-                  Lic. en Administración de Empresas • Magíster en Sistemas Ferroviarios
-                </p>
-
-                <div className="pt-2 flex justify-center">
-                  <a
-                    href="https://www.linkedin.com/in/migman-pinchi-caro-168541194/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-2 bg-[#0A66C2] hover:bg-[#084e96] text-white px-5 py-2.5 rounded-xl font-extrabold text-xs uppercase tracking-wider shadow-md transition-all hover:scale-105"
-                  >
-                    <Linkedin className="w-4 h-4 fill-current" />
-                    <span>Ver Perfil en LinkedIn</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
-                </div>
+              {/* LinkedIn & Social CTA */}
+              <div className="pt-2">
+                <a
+                  href="https://www.linkedin.com/in/migman-pinchi-caro-168541194/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center space-x-2 bg-[#0A66C2] hover:bg-[#084e96] text-white py-3.5 px-4 rounded-2xl font-black text-xs uppercase tracking-wider shadow-lg transition-all hover:scale-[1.02]"
+                >
+                  <Linkedin className="w-4 h-4 fill-current" />
+                  <span>VER PERFIL EN LINKEDIN</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
               </div>
 
             </div>
           </div>
 
-          {/* Biography Bio & Story Text */}
-          <div className="lg:col-span-7 space-y-6 text-gray-200">
-            
-            <div className="bg-morado-900/60 border-l-4 border-verde-400 p-6 rounded-r-2xl space-y-3">
-              <h4 className="text-xl font-extrabold text-white">
-                &quot;El cambio se construye con hechos, no solo con palabras&quot;
-              </h4>
-              <p className="text-sm text-purple-200 leading-relaxed">
-                Soy Migman, nací en Iquitos, crecí en el distrito de Tres Unidos (San Martín) y desde los 16 años vivo en Lima. Aprendí el valor del esfuerzo y la integridad jamás dejándome corromper.
-              </p>
-            </div>
-
-            <div className="space-y-4 text-sm sm:text-base leading-relaxed text-gray-300">
-              <p>
-                Cuando llegué a <strong className="text-white">Villa El Salvador</strong>, trabajé arduamente en diversos oficios, forjándome con disciplina y vocación de servicio, hasta ingresar a la <strong className="text-verde-400">Línea 1 del Metro de Lima</strong>. Durante más de 14 años me he desempeñado como cajero, administrador junior, conductor de tren, inspector de transporte e instructor de capacitación técnica, aprendiendo a manejar situaciones complejas con eficiencia.
-              </p>
+          {/* Right: Featured Quote Card */}
+          <div className="lg:col-span-7 flex flex-col justify-between">
+            <div className="bg-gradient-to-br from-morado-900/90 via-morado-950 to-morado-900/90 border-2 border-morado-700/80 rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden flex flex-col justify-between space-y-6">
               
-              <p>
-                Como <strong className="text-white">Lic. en Administración de Empresas</strong> y <strong className="text-white">Magíster en Sistemas Ferroviarios</strong>, he combinado mi vocación social con una sólida preparación técnica para el servicio público. Desde muy joven me involucré en la representación social: fui <strong className="text-white">Alcalde Escolar</strong>, participé en marchas ciudadanas por el respeto de nuestros derechos y promuevo activamente el deporte y el voluntariado vecinal.
-              </p>
+              <div className="absolute top-4 right-4 text-verde-400/10 pointer-events-none">
+                <Quote className="w-32 h-32" />
+              </div>
 
-              <p className="bg-morado-900/40 p-4 rounded-xl border border-morado-700 text-white font-medium">
-                💪 Creo firmemente que es momento de que más jóvenes se involucren con energía e ideas transparentes para construir un Perú más próspero e íntegro. No puedo quedarme de brazos cruzados viendo las injusticias y necesidades de nuestro distrito.
-              </p>
+              <div className="space-y-4 relative z-10">
+                <div className="inline-flex items-center space-x-2 text-verde-400 text-xs font-black uppercase tracking-widest bg-verde-500/10 px-3 py-1 rounded-full border border-verde-500/30">
+                  <Sparkles className="w-3.5 h-3.5" /> PRINCIPIO FUNDAMENTAL
+                </div>
+
+                <blockquote className="text-2xl sm:text-3xl font-black text-white leading-snug">
+                  &quot;El cambio se construye <span className="text-verde-400 underline decoration-verde-500 decoration-4">con hechos</span>, no solo con palabras&quot;
+                </blockquote>
+
+                <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                  Soy Migman, nací en Iquitos, crecí en el distrito de Tres Unidos (San Martín) y desde los 16 años vivo en Lima. Aprendí el valor del esfuerzo y la integridad <strong className="text-white">jamás dejándome corromper</strong>.
+                </p>
+              </div>
+
+              {/* Quick Feature Badges */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 relative z-10">
+                <div className="bg-morado-950/80 border border-morado-800 p-3 rounded-2xl text-center space-y-1">
+                  <span className="block text-xs font-black text-verde-400 uppercase">14+ AÑOS</span>
+                  <span className="block text-[11px] text-gray-300 font-medium">Línea 1 Metro Lima</span>
+                </div>
+                <div className="bg-morado-950/80 border border-morado-800 p-3 rounded-2xl text-center space-y-1">
+                  <span className="block text-xs font-black text-verde-400 uppercase">LICENCIADO</span>
+                  <span className="block text-[11px] text-gray-300 font-medium">Administración (UPC)</span>
+                </div>
+                <div className="col-span-2 sm:col-span-1 bg-morado-950/80 border border-morado-800 p-3 rounded-2xl text-center space-y-1">
+                  <span className="block text-xs font-black text-verde-400 uppercase">MAGÍSTER</span>
+                  <span className="block text-[11px] text-gray-300 font-medium">Sistemas Ferroviarios</span>
+                </div>
+              </div>
+
             </div>
-
           </div>
 
         </div>
 
-        {/* Education & Experience Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-8">
-          
-          {/* Formación Académica */}
-          <div className="bg-morado-900/70 border border-morado-700/60 rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl">
-            <div className="flex items-center space-x-3 text-verde-400 border-b border-morado-800 pb-4">
-              <GraduationCap className="w-8 h-8" />
-              <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-purple-300">PREPARACIÓN PROFESIONAL</span>
-                <h3 className="text-xl font-black text-white">Formación Académica</h3>
+        {/* Interactive Navigation Tabs for Story / Education / Experience */}
+        <div className="flex justify-center border-b border-morado-800/80 pb-4">
+          <div className="inline-flex bg-morado-950/90 p-1.5 rounded-2xl border border-morado-700/60 shadow-lg">
+            <button
+              onClick={() => setActiveTab('historia')}
+              className={`px-5 py-2.5 rounded-xl font-extrabold text-xs sm:text-sm transition-all uppercase tracking-wider flex items-center space-x-2 ${
+                activeTab === 'historia'
+                  ? 'bg-verde-500 text-morado-950 shadow-md scale-105'
+                  : 'text-gray-300 hover:text-white hover:bg-morado-900'
+              }`}
+            >
+              <HeartHandshake className="w-4 h-4" />
+              <span>MI HISTORIA Y VALORES</span>
+            </button>
+
+            <button
+              onClick={() => setActiveTab('educacion')}
+              className={`px-5 py-2.5 rounded-xl font-extrabold text-xs sm:text-sm transition-all uppercase tracking-wider flex items-center space-x-2 ${
+                activeTab === 'educacion'
+                  ? 'bg-verde-500 text-morado-950 shadow-md scale-105'
+                  : 'text-gray-300 hover:text-white hover:bg-morado-900'
+              }`}
+            >
+              <GraduationCap className="w-4 h-4" />
+              <span>FORMACIÓN ACADÉMICA</span>
+            </button>
+
+            <button
+              onClick={() => setActiveTab('experiencia')}
+              className={`px-5 py-2.5 rounded-xl font-extrabold text-xs sm:text-sm transition-all uppercase tracking-wider flex items-center space-x-2 ${
+                activeTab === 'experiencia'
+                  ? 'bg-verde-500 text-morado-950 shadow-md scale-105'
+                  : 'text-gray-300 hover:text-white hover:bg-morado-900'
+              }`}
+            >
+              <Briefcase className="w-4 h-4" />
+              <span>EXPERIENCIA LABORAL</span>
+            </button>
+          </div>
+        </div>
+
+        {/* Tab Content Display */}
+
+        {/* TAB 1: STORY & VALUES */}
+        {activeTab === 'historia' && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fadeIn">
+            
+            {/* Card 1 */}
+            <div className="bg-gradient-to-br from-morado-900 to-morado-950 border border-morado-700/60 p-6 sm:p-8 rounded-3xl shadow-xl space-y-4 glass-card-hover">
+              <div className="w-12 h-12 bg-morado-800 text-verde-400 rounded-2xl flex items-center justify-center font-black">
+                <MapPin className="w-6 h-6" />
               </div>
+              <h3 className="text-xl font-black text-white">Esfuerzo desde Abajo y Trabajo Honesto</h3>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                Al llegar a <strong className="text-white">Villa El Salvador</strong>, trabajé arduamente en diversos oficios forjándome con disciplina y vocación de servicio, hasta ingresar a la <strong className="text-verde-400">Línea 1 del Metro de Lima</strong>. Durante más de 14 años aprendí a manejar situaciones complejas con máxima eficiencia.
+              </p>
             </div>
 
-            <div className="space-y-4">
-              {educacion.map((item, index) => (
-                <div key={index} className="bg-morado-950/80 p-4 rounded-2xl border border-morado-800 hover:border-verde-500/50 transition">
-                  <div className="flex items-center justify-between text-xs text-verde-400 font-bold mb-1">
-                    <span>{item.institucion}</span>
-                    <span className="bg-morado-800 text-white px-2.5 py-0.5 rounded-full">{item.periodo}</span>
+            {/* Card 2 */}
+            <div className="bg-gradient-to-br from-morado-900 to-morado-950 border border-morado-700/60 p-6 sm:p-8 rounded-3xl shadow-xl space-y-4 glass-card-hover">
+              <div className="w-12 h-12 bg-morado-800 text-verde-400 rounded-2xl flex items-center justify-center font-black">
+                <ShieldCheck className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-black text-white">Liderazgo Escolar y Compromiso Social</h3>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                Fui <strong className="text-white">Alcalde Escolar</strong>, participé activamente en marchas por los derechos de la ciudadanía y promuevo constantemente el deporte y el voluntariado vecinal, lo que forjó mi convicción por una gestión transparente.
+              </p>
+            </div>
+
+            {/* Banner Wide Quote */}
+            <div className="md:col-span-2 bg-gradient-to-r from-verde-500/20 via-morado-900 to-verde-500/20 border-2 border-verde-500/40 p-6 sm:p-8 rounded-3xl text-center space-y-3 shadow-xl">
+              <span className="text-xs font-black text-verde-400 uppercase tracking-widest">COMPROMISO POR UN PERÚ ÍNTEGRO</span>
+              <p className="text-base sm:text-xl font-extrabold text-white max-w-3xl mx-auto leading-relaxed">
+                &quot;Creo firmemente que es momento de que más jóvenes se involucren con energía e ideas transparentes para construir un Perú más próspero. No puedo quedarme de brazos cruzados viendo las injusticias y necesidades de nuestro distrito.&quot;
+              </p>
+            </div>
+
+          </div>
+        )}
+
+        {/* TAB 2: ACADEMIC EDUCATION */}
+        {activeTab === 'educacion' && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fadeIn">
+            {educacion.map((item, idx) => {
+              const Icon = item.icono;
+              return (
+                <div key={idx} className="bg-morado-900/90 border border-morado-700/80 p-6 rounded-3xl space-y-3 glass-card-hover shadow-xl">
+                  <div className="flex items-center justify-between">
+                    <div className="w-10 h-10 bg-morado-800 text-verde-400 rounded-xl flex items-center justify-center font-bold">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <span className="bg-verde-500/20 text-verde-300 text-xs font-extrabold px-3 py-1 rounded-full border border-verde-500/30">
+                      {item.periodo}
+                    </span>
                   </div>
-                  <h4 className="text-base font-extrabold text-white">{item.titulo}</h4>
-                  <span className="inline-block mt-1 text-[11px] font-semibold text-purple-300">
+                  <h4 className="text-lg font-black text-white">{item.titulo}</h4>
+                  <p className="text-sm font-bold text-verde-400">{item.institucion}</p>
+                  <span className="inline-block text-xs font-semibold text-purple-200 bg-morado-950 px-3 py-1 rounded-lg">
                     ✦ {item.destaque}
                   </span>
                 </div>
-              ))}
-            </div>
+              );
+            })}
           </div>
+        )}
 
-          {/* Experiencia Laboral & Liderazgo */}
-          <div className="bg-morado-900/70 border border-morado-700/60 rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl">
-            <div className="flex items-center space-x-3 text-verde-400 border-b border-morado-800 pb-4">
-              <Briefcase className="w-8 h-8" />
-              <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-purple-300">TRAYECTORIA DE GESTIÓN (14+ AÑOS)</span>
-                <h3 className="text-xl font-black text-white">Experiencia Laboral</h3>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              {experiencia.map((item, index) => (
-                <div key={index} className="bg-morado-950/80 p-4 rounded-2xl border border-morado-800 hover:border-verde-500/50 transition">
-                  <div className="flex items-center justify-between text-xs text-verde-400 font-bold mb-1">
-                    <span>{item.empresa}</span>
-                    <span className="bg-morado-800 text-white px-2.5 py-0.5 rounded-full">{item.periodo}</span>
+        {/* TAB 3: WORK EXPERIENCE */}
+        {activeTab === 'experiencia' && (
+          <div className="space-y-4 max-w-4xl mx-auto animate-fadeIn">
+            {experiencia.map((item, idx) => (
+              <div key={idx} className="bg-morado-900/90 border border-morado-700/80 p-6 rounded-3xl space-y-2 glass-card-hover shadow-xl flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div className="space-y-1">
+                  <div className="flex items-center space-x-2">
+                    <span className="text-xs font-black text-verde-400 uppercase tracking-widest">{item.empresa}</span>
                   </div>
-                  <h4 className="text-base font-extrabold text-white">{item.cargo}</h4>
+                  <h4 className="text-lg font-black text-white">{item.cargo}</h4>
+                  <p className="text-xs text-gray-300">{item.descripcion}</p>
                 </div>
-              ))}
-            </div>
+                <div className="flex-shrink-0">
+                  <span className="bg-morado-950 text-verde-400 border border-verde-500/30 text-xs font-extrabold px-4 py-2 rounded-xl inline-block">
+                    {item.periodo}
+                  </span>
+                </div>
+              </div>
+            ))}
           </div>
-
-        </div>
+        )}
 
       </div>
 
