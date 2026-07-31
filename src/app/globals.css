@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-outfit: 'Outfit', sans-serif;
+  --font-jakarta: 'Plus Jakarta Sans', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-jakarta);
+}
+
+body {
+  background-color: #0d0414;
+  color: #f3f4f6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: var(--font-outfit);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1a0826;
+}
+::-webkit-scrollbar-thumb {
+  background: #6d28d9;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #22c55e;
+}
+
+/* Concentric background rings matching candidate flyer */
+.concentric-bg {
+  background: radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.25) 0%, rgba(59, 7, 100, 0.7) 40%, rgba(13, 4, 20, 0.98) 100%);
+  position: relative;
+}
+
+.concentric-rings {
+  background-image: repeating-radial-gradient(circle at center, transparent 0, transparent 30px, rgba(255, 255, 255, 0.04) 31px, rgba(255, 255, 255, 0.04) 32px);
+}
+
+/* Custom Glassmorphism */
+.glass-card {
+  background: rgba(30, 10, 50, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(167, 139, 250, 0.2);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-card-hover:hover {
+  transform: translateY(-4px);
+  background: rgba(45, 15, 75, 0.75);
+  border-color: rgba(34, 197, 94, 0.5);
+  box-shadow: 0 10px 30px -10px rgba(34, 197, 94, 0.25);
+}
+
+.gradient-text-morado {
+  background: linear-gradient(135deg, #ffffff 0%, #d8b4fe 50%, #4ade80 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-verde {
+  background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.badge-glow {
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.4);
+}
