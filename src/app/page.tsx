@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import ModalVoto from '@/components/ModalVoto';
+import Preloader from '@/components/Preloader';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import SobreMi from '@/components/SobreMi';
@@ -15,8 +15,8 @@ import Footer from '@/components/Footer';
 export default function Home() {
   return (
     <main className="min-h-screen bg-morado-dark text-white selection:bg-verde-500 selection:text-morado-950">
-      {/* Modal on page entry */}
-      <ModalVoto />
+      {/* Animated Splash Preloader with Partido Morado logo */}
+      <Preloader />
 
       {/* Navigation Header */}
       <Header />
