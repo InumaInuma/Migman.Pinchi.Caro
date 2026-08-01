@@ -1,12 +1,19 @@
 'use client';
 
 import React, { useState } from 'react';
-import { UserCheck, GraduationCap, Briefcase, Linkedin, ExternalLink, MapPin, Quote, Sparkles, Train, ShieldCheck, HeartHandshake, Award, ChevronRight } from 'lucide-react';
+import { UserCheck, GraduationCap, Briefcase, Linkedin, ExternalLink, MapPin, Quote, Sparkles, Train, ShieldCheck, HeartHandshake, Award, Landmark } from 'lucide-react';
 
 export default function SobreMi() {
   const [activeTab, setActiveTab] = useState<'historia' | 'educacion' | 'experiencia'>('historia');
 
   const educacion = [
+    {
+      titulo: 'Curso de Gestión Pública Regional y Municipal',
+      institucion: 'Pontificia Universidad Católica del Perú (PUCP)',
+      periodo: 'Junio - Julio 2026',
+      destaque: 'Especialización en Gestión Municipal',
+      icono: Landmark
+    },
     {
       titulo: 'Maestría en Sistemas Ferroviarios (Magíster)',
       institucion: 'TECH Universidad',
@@ -159,8 +166,8 @@ export default function SobreMi() {
                   <span className="block text-[11px] text-gray-300 font-medium">Línea 1 Metro Lima</span>
                 </div>
                 <div className="bg-morado-950/80 border border-morado-800 p-3 rounded-2xl text-center space-y-1">
-                  <span className="block text-xs font-black text-verde-400 uppercase">LICENCIADO</span>
-                  <span className="block text-[11px] text-gray-300 font-medium">Administración (UPC)</span>
+                  <span className="block text-xs font-black text-verde-400 uppercase">GESTIÓN PUCP</span>
+                  <span className="block text-[11px] text-gray-300 font-medium">Pública y Municipal</span>
                 </div>
                 <div className="col-span-2 sm:col-span-1 bg-morado-950/80 border border-morado-800 p-3 rounded-2xl text-center space-y-1">
                   <span className="block text-xs font-black text-verde-400 uppercase">MAGÍSTER</span>
