@@ -174,41 +174,41 @@ export default function SobreMi() {
         </div>
 
         {/* Interactive Navigation Tabs for Story / Education / Experience */}
-        <div className="flex justify-center border-b border-morado-800/80 pb-4">
-          <div className="inline-flex bg-morado-950/90 p-1.5 rounded-2xl border border-morado-700/60 shadow-lg">
+        <div className="flex justify-center border-b border-morado-800/80 pb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 bg-morado-950/90 p-2 rounded-2xl border border-morado-700/60 shadow-lg w-full max-w-3xl">
             <button
               onClick={() => setActiveTab('historia')}
-              className={`px-5 py-2.5 rounded-xl font-extrabold text-xs sm:text-sm transition-all uppercase tracking-wider flex items-center space-x-2 ${
+              className={`w-full py-3 px-4 rounded-xl font-extrabold text-xs sm:text-sm transition-all uppercase tracking-wider flex items-center justify-center space-x-2 text-center ${
                 activeTab === 'historia'
-                  ? 'bg-verde-500 text-morado-950 shadow-md scale-105'
+                  ? 'bg-verde-500 text-morado-950 shadow-md scale-[1.02]'
                   : 'text-gray-300 hover:text-white hover:bg-morado-900'
               }`}
             >
-              <HeartHandshake className="w-4 h-4" />
+              <HeartHandshake className="w-4 h-4 flex-shrink-0" />
               <span>MI HISTORIA Y VALORES</span>
             </button>
 
             <button
               onClick={() => setActiveTab('educacion')}
-              className={`px-5 py-2.5 rounded-xl font-extrabold text-xs sm:text-sm transition-all uppercase tracking-wider flex items-center space-x-2 ${
+              className={`w-full py-3 px-4 rounded-xl font-extrabold text-xs sm:text-sm transition-all uppercase tracking-wider flex items-center justify-center space-x-2 text-center ${
                 activeTab === 'educacion'
-                  ? 'bg-verde-500 text-morado-950 shadow-md scale-105'
+                  ? 'bg-verde-500 text-morado-950 shadow-md scale-[1.02]'
                   : 'text-gray-300 hover:text-white hover:bg-morado-900'
               }`}
             >
-              <GraduationCap className="w-4 h-4" />
+              <GraduationCap className="w-4 h-4 flex-shrink-0" />
               <span>FORMACIÓN ACADÉMICA</span>
             </button>
 
             <button
               onClick={() => setActiveTab('experiencia')}
-              className={`px-5 py-2.5 rounded-xl font-extrabold text-xs sm:text-sm transition-all uppercase tracking-wider flex items-center space-x-2 ${
+              className={`w-full py-3 px-4 rounded-xl font-extrabold text-xs sm:text-sm transition-all uppercase tracking-wider flex items-center justify-center space-x-2 text-center ${
                 activeTab === 'experiencia'
-                  ? 'bg-verde-500 text-morado-950 shadow-md scale-105'
+                  ? 'bg-verde-500 text-morado-950 shadow-md scale-[1.02]'
                   : 'text-gray-300 hover:text-white hover:bg-morado-900'
               }`}
             >
-              <Briefcase className="w-4 h-4" />
+              <Briefcase className="w-4 h-4 flex-shrink-0" />
               <span>EXPERIENCIA LABORAL</span>
             </button>
           </div>
