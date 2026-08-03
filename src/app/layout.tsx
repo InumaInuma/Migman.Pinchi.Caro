@@ -13,6 +13,11 @@ export const metadata: Metadata = {
   description: 'Landing page oficial de la campaña a la alcaldía de Villa El Salvador. Este Domingo 4 de Octubre de 2026 marca el 3 por el Partido Morado.',
   keywords: 'Villa El Salvador, Alcaldia VES, Elecciones 2026, Partido Morado, Candidato VES, Plan de Gobierno Villa El Salvador',
   authors: [{ name: 'Campaña Municipal VES' }],
+  icons: {
+    icon: '/partidomorado.png',
+    shortcut: '/partidomorado.png',
+    apple: '/partidomorado.png',
+  },
   openGraph: {
     title: 'Recuperemos Villa El Salvador | Campaña Municipal 2026',
     description: 'Este Domingo 4 de Octubre de 2026 marca el 3 por Villa El Salvador.',

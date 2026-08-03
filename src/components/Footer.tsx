@@ -32,7 +32,7 @@ export default function Footer() {
           {/* Social Icons */}
           <div className="flex items-center space-x-4">
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/share/1BsuobRgGn/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 bg-morado-900/80 hover:bg-verde-500 hover:text-morado-950 text-white rounded-full flex items-center justify-center font-bold transition-all"
@@ -41,7 +41,7 @@ export default function Footer() {
               FB
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/migman_p_c?igsh=MXZvNW5kMmhrdTd5Mw=="
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 bg-morado-900/80 hover:bg-verde-500 hover:text-morado-950 text-white rounded-full flex items-center justify-center font-bold transition-all"
@@ -50,22 +50,13 @@ export default function Footer() {
               IG
             </a>
             <a
-              href="https://tiktok.com"
+              href="https://www.tiktok.com/@migmanveserespeta?_r=1&_t=ZS-98aRzY4ExBl"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 bg-morado-900/80 hover:bg-verde-500 hover:text-morado-950 text-white rounded-full flex items-center justify-center font-bold transition-all"
               aria-label="TikTok"
             >
               TK
-            </a>
-            <a
-              href="https://youtube.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 bg-morado-900/80 hover:bg-verde-500 hover:text-morado-950 text-white rounded-full flex items-center justify-center font-bold transition-all"
-              aria-label="YouTube"
-            >
-              YT
             </a>
           </div>
 
