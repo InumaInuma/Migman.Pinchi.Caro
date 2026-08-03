@@ -9,18 +9,18 @@ module.exports = {
     extend: {
       colors: {
         morado: {
-          50: '#f5f3ff',
-          100: '#ede9fe',
-          200: '#ddd6fe',
-          300: '#c4b5fd',
-          400: '#a78bfa',
-          500: '#8b5cf6',
-          600: '#7c3aed',
-          700: '#6d28d9',
-          800: '#5b21b6',
-          900: '#4c1d95',
-          950: '#2e1065',
-          dark: '#1e0533',
+          50: '#faf5ff',
+          100: '#f3e8ff',
+          200: '#e9d5ff',
+          300: '#d8b4fe',
+          400: '#a87bc9', // Pantone 2567 C
+          500: '#8347ad', // Pantone 2577 C
+          600: '#7320a3',
+          700: '#641094',
+          800: '#5c0f8b', // Pantone 2587 C (Official Primary Morado)
+          900: '#4c0b74',
+          950: '#2a0342', // Deep dark purple
+          dark: '#140121', // Deeper base purple
         },
         verde: {
           400: '#4ade80',

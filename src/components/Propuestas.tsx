@@ -1,10 +1,12 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Shield, Construction, Trash2, GraduationCap, Stethoscope, Users, X, Check, ArrowRight } from 'lucide-react';
+import { Shield, Truck, Trees, Waves, Music, Accessibility, Heart, X, Check, ArrowRight } from 'lucide-react';
 
 interface Proposal {
   id: string;
+  numero: string;
+  categoria: string;
   titulo: string;
   resumen: string;
   icono: any;
@@ -17,82 +19,104 @@ export default function Propuestas() {
 
   const propuestas: Proposal[] = [
     {
-      id: 'villa-segura',
-      titulo: 'Villa Segura',
-      resumen: 'Más patrullaje, cámaras de seguridad inteligentes y serenazgo capacitado 24/7.',
+      id: 'seguridad-ciudadana',
+      numero: '1',
+      categoria: 'SEGURIDAD CIUDADANA',
+      titulo: 'TOLERANCIA CERO A LA DELINCUENCIA.',
+      resumen: 'Mano firme, tecnología y patrullaje estratégico para devolverle la tranquilidad a nuestras familias.',
       icono: Shield,
       detalles: [
-        'Central de Monitoreo Inteligente con IA para detección inmediata de delitos.',
-        'Triplicación del patrullaje de serenazgo en los 9 sectores de VES.',
-        'Módulos de auxilio rápido en paraderos de alto tránsito.',
-        'Integración con la PNP y juntas vecinales de seguridad.'
+        'Centro de monitoreo con cámaras de alta tecnología con personal capacitado.',
+        'Articulación entre serenazgo, PNP y juntas vecinales.',
+        'Iluminación LED total en zonas críticas.',
+        'Tecnología predictiva: alertas antes del delito.',
+        'App vecinal / botón de pánico conectado al centro.',
+        'Monitoreo por zonas críticas y horarios de mayor incidencia.'
       ],
-      meta: 'Disminuir la delincuencia en un 45% en los primeros 12 meses.'
+      meta: 'Implementar el Centro de Monitoreo Inteligente con cámaras de última generación y patrullaje integrado.'
     },
     {
-      id: 'pistas-veredas',
-      titulo: 'Pistas y Veredas',
-      resumen: 'Calles ordenadas, recapeo de avenidas principales y veredas accesibles.',
-      icono: Construction,
+      id: 'limpieza-publica',
+      numero: '2',
+      categoria: 'LIMPIEZA PÚBLICA',
+      titulo: '¡BASTA DE CALLES SUCIAS!',
+      resumen: 'Recuperemos el orden y la higiene con un servicio moderno y eficiente.',
+      icono: Truck,
       detalles: [
-        'Pavimentación integral de zonas pendientes en los sectores altos.',
-        'Plan de recapeo asfáltico en Av. Revolución, Av. Central y Av. Pastor Sevilla.',
-        'Alumbrado público LED en zonas de mayor vulnerabilidad.',
-        'Veredas inclusivas con rampas para personas con movilidad reducida.'
+        'Rutas de recolección optimizadas y horarios estrictos.',
+        'Puntos ecológicos y multas drásticas a los que ensucian la ciudad.',
+        'Modernización progresiva de la flota de camiones.'
       ],
-      meta: '100% de avenidas principales reasfaltadas e iluminadas.'
+      meta: 'Establecer rutas fijas ecológicas y renovar la flota para lograr un distrito libre de residuos.'
     },
     {
-      id: 'ciudad-limpia',
-      titulo: 'Ciudad Limpia',
-      resumen: 'Más limpieza pública, recojo nocturno eficiente y cultura de reciclaje.',
-      icono: Trash2,
+      id: 'espacios-publicos',
+      numero: '3',
+      categoria: 'RECUPERACIÓN DE ESPACIOS PÚBLICOS',
+      titulo: 'DEVOLVEMOS LOS ESPACIOS PÚBLICOS A LAS FAMILIAS.',
+      resumen: 'Recuperación y embellecimiento de parques, losas deportivas y áreas comunes para el sano esparcimiento.',
+      icono: Trees,
       detalles: [
-        'Nueva flota de camiones compactadores eco-amigables.',
-        'Horarios fijos de recojo de basura en cada sector para evitar acumulación.',
-        'Instalación de contenedores soterrados y puntos limpios de reciclaje.',
-        'Arbolización y recuperación de parques abandonados.'
+        'Intervención de parques y áreas abandonadas.',
+        'Juegos infantiles, losas deportivas iluminadas y zonas de descanso.',
+        'Recuperación de espacios tomados por la informalidad y el desorden.'
       ],
-      meta: 'Cero acumulaciones de basura en vía pública.'
+      meta: 'Iluminar y recuperar el 100% de los parques y complejos recreativos del distrito.'
     },
     {
-      id: 'educacion-juventud',
-      titulo: 'Educación y Juventud',
-      resumen: 'Más oportunidades, becas de estudio y talleres de emprendimiento.',
-      icono: GraduationCap,
+      id: 'alcantarillado-saneamiento',
+      numero: '4',
+      categoria: 'ALCANTARILLADO Y SANEAMIENTO',
+      titulo: 'DRENAJES QUE FUNCIONAN, CALLES SIN INUNDACIONES.',
+      resumen: 'Infraestructura hidráulica moderna para prevenir inundaciones y garantizar un saneamiento digno.',
+      icono: Waves,
       detalles: [
-        'Creación de la Academia Pre-Municipal Gratuita para jóvenes de VES.',
-        'Becas técnicas en alianza con institutos y universidades destacadas.',
-        'Centros de Innovación Digital y Co-working juvenil municipal.',
-        'Talleres deportivos y culturales gratuitos en todas las zonas.'
+        'Creación de puntos de alivio y sumideros de alta capacidad en zonas críticas.',
+        'Sistemas de drenaje pluvial focalizado para evacuar el agua en tiempo récord.'
       ],
-      meta: 'Beneficiar a más de 10,000 jóvenes con capacitación gratuita.'
+      meta: 'Construir sumideros de alta capacidad y sistemas pluviales en zonas críticas vulnerables.'
     },
     {
-      id: 'salud-para-todos',
-      titulo: 'Salud para Todos',
-      resumen: 'Mejores puestos de salud, atención primaria 24/7 y clínicas móviles.',
-      icono: Stethoscope,
+      id: 'deporte-cultura',
+      numero: '5',
+      categoria: 'DEPORTE Y CULTURA PARA LOS JÓVENES',
+      titulo: 'MENOS VIOLENCIA, MÁS DEPORTE Y CULTURA.',
+      resumen: 'Talleres artísticos, escuelas deportivas y centros culturales para potenciar el talento de nuestra juventud.',
+      icono: Music,
       detalles: [
-        'Ambulancias municipales equipadas listas para emergencias 24 horas.',
-        'Campañas semanales de salud gratuita (medicina general, odontología, pediatría).',
-        'Farmacia municipal con medicamentos a precio costo.',
-        'Programa especial de prevención de la anemia y nutrición infantil.'
+        'Escuelas deportivas y talleres artísticos gratuitos en cada sector.',
+        'Torneos interbarrios con premios para jóvenes talentos.',
+        'Centros culturales y espacios para el arte urbano, música y el palacio de la juventud.'
       ],
-      meta: 'Atención médica directa para 50,000 familias de Villa El Salvador.'
+      meta: 'Crear escuelas gratuitas de arte y deporte para alejar a la juventud de la delincuencia.'
     },
     {
-      id: 'participacion-vecinal',
-      titulo: 'Participación Vecinal',
-      resumen: 'Vecinos escuchados, presupuesto participativo real y decisiones transparentes.',
-      icono: Users,
+      id: 'inclusion-habilidades-especiales',
+      numero: '6',
+      categoria: 'INCLUSIÓN PARA PERSONAS CON HABILIDADES ESPECIALES',
+      titulo: 'UNA GESTIÓN SIN BARRERAS.',
+      resumen: 'Garantizar accesibilidad universal, programas de apoyo especializado y fomento del emprendimiento inclusivo.',
+      icono: Accessibility,
       detalles: [
-        'Audiencias públicas descentralizadas cada 3 meses en los sectores.',
-        'App Municipal "VES Transparente" para reportar obras y fiscalizar gastos.',
-        'Presupuesto Participativo ejecutado al 100% según prioridad vecinal.',
-        'Empoderamiento de las dirigencias y juntas directivas de grupos residenciales.'
+        'Rampas de acceso, señalización podotáctil y espacios 100% accesibles.',
+        'Programas de apoyo, capacitación y fomento del emprendimiento.',
+        'Oficina municipal especializada para la defensa de sus derechos.'
       ],
-      meta: 'Transparencia absoluta en la ejecución del presupuesto municipal.'
+      meta: 'Garantizar rampas de accesibilidad y una oficina municipal de protección y capacitación.'
+    },
+    {
+      id: 'bienestar-animal',
+      numero: '7',
+      categoria: 'BIENESTAR Y CONTROL DE LA POBLACIÓN ANIMAL',
+      titulo: 'SALUD Y RESPETO PARA NUESTROS ANIMALES.',
+      resumen: 'Cuidado animal mediante clínicas veterinarias móviles, registro único de mascotas y lucha contra el maltrato.',
+      icono: Heart,
+      detalles: [
+        'Veterinaria móvil que llegará a cada sector.',
+        'Registro único de mascotas para una tenencia responsable.',
+        'Unidad de control y sanción contra el maltrato y abandono animal.'
+      ],
+      meta: 'Poner en funcionamiento el registro único de mascotas y la red de veterinaria móvil municipal.'
     }
   ];
 
@@ -101,35 +125,50 @@ export default function Propuestas() {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-block bg-verde-500/20 text-verde-400 font-extrabold text-xs px-4 py-1.5 rounded-full uppercase tracking-wider border border-verde-500/40">
-            COMPROMISO CON VILLA EL SALVADOR
+            COMPROMISO CON NUESTRO DISTRITO
           </div>
           <h2 className="text-3xl sm:text-5xl font-black text-white uppercase tracking-tight">
-            PROPUESTAS <span className="text-verde-400">PRINCIPALES</span>
+            NUESTRAS <span className="text-verde-400">PROPUESTAS</span>
           </h2>
           <p className="text-gray-300 text-base sm:text-lg">
             Haz clic en <strong className="text-white">&quot;Ver más&quot;</strong> en cada propuesta para conocer las acciones concretas de nuestra gestión.
           </p>
         </div>
 
-        {/* 6 Proposals Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {propuestas.map((prop) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 justify-center">
+          {propuestas.map((prop, idx) => {
             const Icon = prop.icono;
+            const isLast = idx === propuestas.length - 1;
             return (
               <div
                 key={prop.id}
-                className="bg-white rounded-3xl p-6 sm:p-8 text-morado-950 shadow-xl border-2 border-transparent hover:border-verde-500 transition-all duration-300 transform hover:-translate-y-2 flex flex-col justify-between"
+                className={`bg-white rounded-3xl p-6 sm:p-8 text-morado-950 shadow-xl border-2 border-transparent hover:border-verde-500 transition-all duration-300 transform hover:-translate-y-2 flex flex-col justify-between ${
+                  isLast ? 'md:col-span-2 lg:col-span-1 lg:col-start-2' : ''
+                }`}
               >
                 <div className="space-y-4">
-                  {/* Icon Badge */}
-                  <div className="w-14 h-14 bg-morado-900 text-verde-400 rounded-2xl flex items-center justify-center shadow-md">
-                    <Icon className="w-7 h-7" />
+                  <div className="flex items-start justify-between">
+                    <div className="flex items-center space-x-3">
+                      <span className="text-5xl font-black text-morado-950/20 select-none leading-none">
+                        {prop.numero}
+                      </span>
+                      <div className="text-left">
+                        <span className="block text-[10px] font-extrabold tracking-widest text-morado-500 uppercase leading-none mb-1">
+                          PROPUESTA
+                        </span>
+                        <span className="block text-xs font-black tracking-wider text-morado-950 uppercase leading-tight max-w-[150px] sm:max-w-none">
+                          {prop.categoria}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="w-12 h-12 bg-morado-900 text-verde-400 rounded-2xl flex items-center justify-center shadow-md flex-shrink-0">
+                      <Icon className="w-6 h-6" />
+                    </div>
                   </div>
 
-                  <h3 className="text-2xl font-black text-morado-950">
+                  <h3 className="text-lg sm:text-xl font-black text-morado-950 uppercase leading-snug pt-2">
                     {prop.titulo}
                   </h3>
 
@@ -154,7 +193,6 @@ export default function Propuestas() {
 
       </div>
 
-      {/* Proposal Details Modal */}
       {selectedProposal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
           <div className="relative w-full max-w-xl bg-morado-900 border-2 border-verde-400 rounded-3xl p-6 sm:p-8 text-white shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto">
@@ -167,13 +205,17 @@ export default function Propuestas() {
               <X className="w-6 h-6" />
             </button>
 
-            <div className="flex items-center space-x-4">
-              <div className="w-14 h-14 bg-verde-500 text-morado-950 rounded-2xl flex items-center justify-center font-black">
+            <div className="flex items-start space-x-4">
+              <div className="w-14 h-14 bg-verde-500 text-morado-950 rounded-2xl flex items-center justify-center font-black flex-shrink-0 shadow-lg">
                 {React.createElement(selectedProposal.icono, { className: 'w-7 h-7' })}
               </div>
               <div>
-                <span className="text-xs font-bold text-verde-400 uppercase tracking-widest">PROPUESTA DE GOBIERNO</span>
-                <h3 className="text-2xl sm:text-3xl font-black text-white">{selectedProposal.titulo}</h3>
+                <span className="text-xs font-extrabold text-verde-400 uppercase tracking-widest block mb-1">
+                  PROPUESTA N°{selectedProposal.numero} - {selectedProposal.categoria}
+                </span>
+                <h3 className="text-xl sm:text-2xl font-black text-white uppercase leading-tight">
+                  {selectedProposal.titulo}
+                </h3>
               </div>
             </div>
 
