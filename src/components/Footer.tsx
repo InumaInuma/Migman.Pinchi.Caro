@@ -30,12 +30,12 @@ export default function Footer() {
           </div>
 
           {/* Social Icons */}
-          <div className="flex items-center space-x-4">
+          <div className="flex flex-wrap items-center gap-4 justify-center md:justify-start">
             <a
               href="https://www.facebook.com/share/1BsuobRgGn/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 bg-morado-900/80 hover:bg-verde-500 hover:text-morado-950 text-white rounded-full flex items-center justify-center font-bold transition-all"
+              className="w-10 h-10 bg-morado-900/80 hover:bg-verde-500 hover:text-morado-950 text-white rounded-full flex items-center justify-center font-bold transition-all text-xs"
               aria-label="Facebook"
             >
               FB
@@ -44,7 +44,7 @@ export default function Footer() {
               href="https://www.instagram.com/migman_p_c?igsh=MXZvNW5kMmhrdTd5Mw=="
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 bg-morado-900/80 hover:bg-verde-500 hover:text-morado-950 text-white rounded-full flex items-center justify-center font-bold transition-all"
+              className="w-10 h-10 bg-morado-900/80 hover:bg-verde-500 hover:text-morado-950 text-white rounded-full flex items-center justify-center font-bold transition-all text-xs"
               aria-label="Instagram"
             >
               IG
@@ -53,10 +53,37 @@ export default function Footer() {
               href="https://www.tiktok.com/@migmanveserespeta?_r=1&_t=ZS-98aRzY4ExBl"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 bg-morado-900/80 hover:bg-verde-500 hover:text-morado-950 text-white rounded-full flex items-center justify-center font-bold transition-all"
+              className="w-10 h-10 bg-morado-900/80 hover:bg-verde-500 hover:text-morado-950 text-white rounded-full flex items-center justify-center font-bold transition-all text-xs"
               aria-label="TikTok"
             >
               TK
+            </a>
+            <a
+              href="https://youtube.com/@migmanpinchicaro7375?si=eqntF17HpmNWjIqz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 bg-morado-900/80 hover:bg-verde-500 hover:text-morado-950 text-white rounded-full flex items-center justify-center font-bold transition-all text-xs"
+              aria-label="YouTube"
+            >
+              YT
+            </a>
+            <a
+              href="https://twitch.com/MigamanAlcalde"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 bg-morado-900/80 hover:bg-verde-500 hover:text-morado-950 text-white rounded-full flex items-center justify-center font-bold transition-all text-xs"
+              aria-label="Twitch"
+            >
+              TW
+            </a>
+            <a
+              href="https://kick.com/migman-moradito"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 bg-morado-900/80 hover:bg-verde-500 hover:text-morado-950 text-white rounded-full flex items-center justify-center font-bold transition-all text-xs"
+              aria-label="Kick"
+            >
+              KC
             </a>
           </div>
 
